@@ -8,6 +8,7 @@ function imprimir(){
 
 function presionoClick(){
     console.log("click en boton");
+    // console.log("click en boton")
 }
 
 imprimir();
