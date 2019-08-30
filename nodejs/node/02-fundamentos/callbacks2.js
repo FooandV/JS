@@ -15,7 +15,7 @@ let salarios = [{
 }, {
     id:2,
     salario: 2000
-}]
+}];
 //funcion para obtener un empleado por el id
 // para esta funcion necesito recibir el id del usuario y 
 // el callback que yo quiero llamar cuando yo ya tengo el id del usuario
@@ -23,19 +23,40 @@ let getEmpleado = (id, callback) =>{
     // el find va barrer todo el arreglo, donde por cada iteracion voy a obtener un empleado
     let empleadoDB= empleados.find( empleado => {
         //acá va la condicion que se tiene que regresar:
-        return empleado.id === id
-    })
+        return empleado.id === id;
+    });
 
     if ( !empleadoDB){
         // se inyecta en el callback el id que se esta recibiendo por parametro
-        callback(`No existe un empleado con el ID ${id}`)
+        callback(`No existe un empleado con el ID ${id}`);
     }else{
         //mando al callback un "null" porque no hay ningun error, y retorno el empleado
-        callback(null, empleadoDB)
+        callback(null, empleadoDB);
     }
 
     // console.log(empleadoDB)
-}
+};
+
+//cuando estoy ejecutando una función y tengo un callback implicito 
+// lo llamo a traves de una funcion de flecha
+getEmpleado(3, (err,empleado)=>{
+    if(err){
+        return console.log(err);
+    }
+    // aca se ejecuta la funcion del salario:
+    //recibe el empleado y se especifica lo que se quiera hacer despues cuando ya obtenga 
+    // el empleado con el salario es decir la función callback()
+    getSalario(empleado, (err, resp )=>{
+        //se revisa si existe un error y lo muestra:
+        if(err){
+            return console.log(err);
+        }
+        // si no quiere decir que tengo un salario de res=respuesta:
+        console.log(`El salario de ${resp.nombre} es de ${resp.salario}$ `);
+
+        });
+    
+});
 
 // la funcion getSalario debe retornar una respuesta asi:
 // {
@@ -46,14 +67,15 @@ let getEmpleado = (id, callback) =>{
 // No se encontro un salario para el usuario Violetta
 
 getSalario = (empleado, callback) =>{
-    // lo primero es buscar en nuestra arreglo de salarios[] el empleado con su respectivo id
+    // lo primero es buscar en nuestra arreglo de salarios[] el empleado 
+    // con su respectivo id
 
     let salarioDB = salarios.find(salario =>{
         return salario.id === empleado.id;
     })
 
     if (!salarioDB){
-        callback(`No se encontro un salario para el usuario ${empleado.nombre}`)
+        callback(`No se encontro un salario para el usuario ${empleado.nombre}`);
     }else{
         //en los callback se puede llamar cualquier cosa, pero se acostumbra que cuando se llame 
         // una respuesta sea un objeto si tienen mas de una propiedad, si se quiere regresar 
@@ -65,15 +87,4 @@ getSalario = (empleado, callback) =>{
         });
     }
 
-}
-
-
-
-
-//cuando estoy ejecutando una función y tengo un callback implicito lo llamo a traves de una funcion de flecha
-getEmpleado(1, (err,empleado)=>{
-    if(err){
-        return console.log(err)
-    }
-    console.log(empleado)
-});
+};
