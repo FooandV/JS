@@ -60,6 +60,15 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    events: 
+      - http:
+          path: hola-mundo #esta va hacer la URL
+          method: get # el metodo va hacer una petición de tipo get
+
+
+
+
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
