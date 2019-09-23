@@ -8,7 +8,9 @@
 
 // console.log(sumar(10, 20));
 
-// let saludar = ()=>'Hola Mundo';
+// let saludar = ()=>'Hola Violetta';
+// console.log(saludar());
+
 
 // function saludar(nombre) {
 //     return `Hola ${nombre}`;
@@ -17,6 +19,8 @@
 // let saludar =(nombre)=>`hola ${nombre}`;
 // console.log(saludar('Violetta'));
 
+
+/* otro ejemplo */
 let deadpool = {
     nombre: 'Wade',
     apellido: 'Winston',
@@ -25,4 +29,7 @@ let deadpool = {
         return `${this.nombre} ${this.apellido} - poder: ${this.poder}`;
     }
 };
+/* en funcion de flecha */
+
+
 console.log(deadpool.getInfo());
