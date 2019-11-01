@@ -1,5 +1,5 @@
 var persona = {};
-persona.nombre = "Sergio";
+persona.nombre = "freyder";
 
 var otraPersona = new Object();
 

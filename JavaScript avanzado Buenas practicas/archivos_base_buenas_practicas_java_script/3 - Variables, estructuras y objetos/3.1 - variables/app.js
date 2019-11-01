@@ -1,3 +1,3 @@
-var mensaje = "¡Hola Mundo!", 
+var mensaje = "¡Hola Violetta!", 
     estado = "activo",
     resultado = 45;

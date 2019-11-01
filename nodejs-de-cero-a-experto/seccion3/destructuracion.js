@@ -6,7 +6,7 @@ let deadpool = {
         return `${this.nombre} ${this.apellido} - poder: ${this.poder}`;
     }
 };
-// console.log( deadpool.getInfo());
+console.log( deadpool.getInfo());
 
 // Si solo se quisiera obtener el nombre o el apellido o el poder
 //  del objeto "deadpool" en una variable aparte:

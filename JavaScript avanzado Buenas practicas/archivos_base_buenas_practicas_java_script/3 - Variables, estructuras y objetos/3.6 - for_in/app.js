@@ -1,7 +1,8 @@
+
 var persona = {
-	nombre: "Sergio",
-	email: "sergiobritor@gmail.com",
-	twitter: "yacafx",
+	nombre: "Freyder",
+	email: "freyder@hotmail.com",
+	gitHub: "fooandv",
 	saludar: function(){
 		return "Hola mundo"
 	}
